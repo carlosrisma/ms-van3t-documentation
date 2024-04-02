@@ -3,16 +3,18 @@ Modules
 ========
 .. contents:: Table of Contents
     :local:
-.. doxygenclass:: ns3::CABasicService
-   :members:
+
 Automotive module
 ==================
 The automotive module is the main module of **ms-van3t** containing all the sample applications, ETSI C-ITS sub-modules, and additional auxiliary sub-modules, all listed below: 
 
 - Facilities layer
-  
+
   - Cooperative Awareness basic service (CABasicService)
-    
+  
+    .. doxygenclass:: ns3::CABasicService
+       :members:
+  
   - Decentralized Environmental Notification basic service (DENBasicService)
       
   - Infrastructure to Vehicle Information basic service (IVIBasicService)
