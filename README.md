@@ -1,6 +1,4 @@
-readthedocs-breathe
-===================
+ms-van3t documentation
+======================
 
-Barebones example of a ReadTheDocs repo using Breathe to use Doxygen in Sphinx.
-
-Docs generated from this repo: http://readthedocs-breathe.rtfd.org/
+ms-van3t documentation available here: https://ms-van3t-documentation.readthedocs.io/en/latest/
