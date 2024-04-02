@@ -16,9 +16,10 @@ Cooperative Awareness basic service (CABasicService)
   
 .. doxygenclass:: ns3::CABasicService
    :members:
-  
+
+
 Decentralized Environmental Notification basic service (DENBasicService)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Infrastructure to Vehicle Information basic service (IVIBasicService)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
