@@ -6,7 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 3
 
-.. doxygenclass:: CABasicService
+.. doxygenclass:: classns3_1_1_c_a_basic_service
    :members:
 
 Indices and tables
