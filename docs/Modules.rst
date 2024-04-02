@@ -8,36 +8,50 @@ Automotive module
 ==================
 The automotive module is the main module of **ms-van3t** containing all the sample applications, ETSI C-ITS sub-modules, and additional auxiliary sub-modules, all listed below: 
 
-- Facilities layer
+Facilities layer
+----------------
 
-  - Cooperative Awareness basic service (CABasicService)
+Cooperative Awareness basic service (CABasicService)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
-    .. doxygenclass:: ns3::CABasicService
-       :members:
+.. doxygenclass:: ns3::CABasicService
+   :members:
   
-  - Decentralized Environmental Notification basic service (DENBasicService)
+Decentralized Environmental Notification basic service (DENBasicService)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Infrastructure to Vehicle Information basic service (IVIBasicService)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+Collective Perception basic service (CPBasicService)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+Vehicle Data Provider (VDP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
       
-  - Infrastructure to Vehicle Information basic service (IVIBasicService)
+Local Dynamic Map (LDM)
+~~~~~~~~~~~~~~~~~~~~~~~
   
-  - Collective Perception basic service (CPBasicService)
+Networking and Transport layers
+-------------------------------
   
-  - Vehicle Data Provider (VDP)
-      
-  - Local Dynamic Map (LDM)
-  
-- Networking and Transport layers
-  
-  - Basic Transport Protocol (BTP)
-  
-  - GeoNetworking (GeoNet) 
+Basic Transport Protocol (BTP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Measurements 
-  
-  - Packet Reception Ratio supervisor (PRRsupervisor)
+GeoNetworking (GeoNet) 
+~~~~~~~~~~~~~~~~~~~~~~
 
-- Utilities
+Measurements 
+------------
   
-  - SUMO sensor
+Packet Reception Ratio supervisor (PRRsupervisor)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Utilities
+---------
+
+SUMO sensor
+~~~~~~~~~~~
 
 GPS-tc module
 =============
