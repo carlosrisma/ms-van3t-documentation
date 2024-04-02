@@ -11,6 +11,8 @@ The automotive module is the main module of **ms-van3t** containing all the samp
 - Facilities layer
   
   - Cooperative Awareness basic service (CABasicService)
+    .. doxygenclass:: ns3::CABasicService
+       :members:
     
   - Decentralized Environmental Notification basic service (DENBasicService)
       
