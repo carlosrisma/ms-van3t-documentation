@@ -233,45 +233,61 @@ namespace ns3
     std::function<void(asn1cpp::Seq<CAM>, Address, Ptr<Packet>)> m_CAReceiveCallbackPkt;
     std::function<void(asn1cpp::Seq<CAM>, Address, StationId_t, StationType_t, SignalInfo)> m_CAReceiveCallbackExtended;
 
-    Ptr<btp> m_btp; //!< BTP object
+    //!< BTP object
+    Ptr<btp> m_btp;
+    //!< CAM generation check interval
+    long m_T_CheckCamGen_ms;
+    //!< CAM generation interval
+    long m_T_GenCam_ms;
 
-    long m_T_CheckCamGen_ms;  //!< CAM generation check interval
-    long m_T_GenCam_ms;  //!< CAM generation interval
     int16_t m_N_GenCam;
     int16_t m_N_GenCamMax;
 
-    long m_RSU_GenCam_ms; //!< CAM generation interval for RSU ITS-Ss
+    //!< CAM generation interval for RSU ITS-Ss
+    long m_RSU_GenCam_ms;
 
-    int64_t lastCamGen;  //!< Last CAM generation timestamp
-    int64_t lastCamGenLowFrequency;  //!< Last CAM generation timestamp for low frequency CAMs
+    //!< Last CAM generation timestamp
+    int64_t lastCamGen;
+    //!< Last CAM generation timestamp for low frequency CAMs
+    int64_t lastCamGenLowFrequency;
     int64_t lastCamGenSpecialVehicle;
 
-    bool m_real_time;  //!< If true, the CA Basic Service will generate CAM messages using real time timestamps
-    bool m_vehicle;  //!< If true, the CA Basic Service will generate CAM messages as a vehicle, otherwise it will generate CAM messages as an RSU
-    VDP* m_vdp;  //!< VDP object
+    //!< If true, the CA Basic Service will generate CAM messages using real time timestamps
+    bool m_real_time;
+    //!< If true, the CA Basic Service will generate CAM messages as a vehicle, otherwise it will generate CAM messages as an RSU
+    bool m_vehicle;
+    //!< VDP object
+    VDP* m_vdp;
 
-    Ptr<Socket> m_socket_tx; //!< Socket used to send CAM messages
-
-     Ptr<LDM> m_LDM;  //!< LDM object
-
-    StationId_t m_station_id;  //!< Station ID
-    StationType_t m_stationtype;  //!< Station type
+    //!< Socket used to send CAM messages
+    Ptr<Socket> m_socket_tx;
+    //!< LDM object
+    Ptr<LDM> m_LDM;
+    //!< Station ID
+    StationId_t m_station_id;
+    //!< Station type
+    StationType_t m_stationtype;
 
     // Previous CAM relevant values
-    double m_prev_heading;  //!< Previous heading
-    double m_prev_distance;  //!< Previous distance
-    double m_prev_speed;  //!< Previous speed
+    //!< Previous heading
+    double m_prev_heading;
+    //!< Previous distance
+    double m_prev_distance;
+    //!< Previous speed
+    double m_prev_speed;
 
-    // Statistic: number of CAMs successfully sent since the CA Basic Service has been started
-    // The CA Basic Service can count up to 18446744073709551615 (UINT64_MAX) CAMs
-    uint64_t m_cam_sent;  //!< Number of CAMs successfully sent since the CA Basic Service has been started. The CA Basic Service can count up to 18446744073709551615 (UINT64_MAX) CAMs
-
+    //!< Number of CAMs successfully sent since the CA Basic Service has been started. The CA Basic Service can count up to 18446744073709551615 (UINT64_MAX) CAMs
+    uint64_t m_cam_sent;
     // ns-3 event IDs used to properly stop the simulation with terminateDissemination()
-    EventId m_event_camDisseminationStart;  //!< Event ID for the start of the CAM dissemination
-    EventId m_event_camCheckConditions;  //!< Event ID for the check of the CAM generation conditions
-    EventId m_event_camRsuDissemination;  //!< Event ID for the RSU CAM dissemination
+    //!< Event ID for the start of the CAM dissemination
+    EventId m_event_camDisseminationStart;
+    //!< Event ID for the check of the CAM generation conditions
+    EventId m_event_camCheckConditions;
+    //!< Event ID for the RSU CAM dissemination
+    EventId m_event_camRsuDissemination;
 
-    std::vector<std::pair<ReferencePositionWithConfidence_t,PathHistoryDeltas_t>> m_refPositions;  //!< Reference positions for the PathHistory container
+    //!< Reference positions for the PathHistory container
+    std::vector<std::pair<ReferencePositionWithConfidence_t,PathHistoryDeltas_t>> m_refPositions;
 
     //High frequency RSU container
     asn1cpp::Seq<RSUContainerHighFrequency> m_protectedCommunicationsZonesRSU;
