@@ -1,4 +1,4 @@
-PROJECT_NAME     = "ReadTheDocs-Breathe Barebones"
+PROJECT_NAME     = "ms-van3t-documentation"
 XML_OUTPUT       = doxyxml
 GENERATE_LATEX   = NO
 GENERATE_MAN     = NO
