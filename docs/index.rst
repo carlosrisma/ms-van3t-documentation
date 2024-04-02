@@ -1,12 +1,12 @@
-readthedocs-breathe
-===================
+ms-van3t documentation
+======================
 
 Contents:
 
 .. toctree::
    :maxdepth: 3
 
-.. doxygenclass:: Nutshell
+.. doxygenclass:: CABasicService
    :members:
 
 Indices and tables
