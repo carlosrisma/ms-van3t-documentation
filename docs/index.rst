@@ -37,11 +37,13 @@ Contents
 
    installation
    IDE
+   CARLA
    Simulation
    Applications
    Emulation
    Modules
    Acknowledgements
+
 
 .. note::
 
