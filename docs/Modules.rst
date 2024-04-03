@@ -27,13 +27,22 @@ Decentralized Environmental Notification basic service (DENBasicService)
 
 Infrastructure to Vehicle Information basic service (IVIBasicService)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  
+
+.. doxygenclass:: ns3::IVIBasicService
+   :members:
+
 Collective Perception basic service (CPBasicService)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  
+
+.. doxygenclass:: ns3::CPBasicService
+   :members:
+
 Vehicle Data Provider (VDP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      
+
+.. doxygenclass:: ns3::VDPTraCI
+   :members:
+
 Local Dynamic Map (LDM)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -47,8 +56,14 @@ Networking and Transport layers
 Basic Transport Protocol (BTP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. doxygenclass:: ns3::btp
+   :members:
+
 GeoNetworking (GeoNet) 
 ~~~~~~~~~~~~~~~~~~~~~~
+
+.. doxygenclass:: ns3::geonet
+   :members:
 
 Measurements 
 ------------
@@ -56,11 +71,17 @@ Measurements
 Packet Reception Ratio supervisor (PRRsupervisor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. doxygenclass:: ns3::PRRSupervisor
+   :members:
+
 Utilities
 ---------
 
 SUMO sensor
 ~~~~~~~~~~~
+
+.. doxygenclass:: ns3::SUMOSensor
+   :members:
 
 GPS-tc module
 =============
