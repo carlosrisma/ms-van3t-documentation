@@ -21,6 +21,10 @@ Cooperative Awareness basic service (CABasicService)
 Decentralized Environmental Notification basic service (DENBasicService)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. doxygenclass:: ns3::DENBasicService
+   :members:
+
+
 Infrastructure to Vehicle Information basic service (IVIBasicService)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
@@ -32,6 +36,10 @@ Vehicle Data Provider (VDP)
       
 Local Dynamic Map (LDM)
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+.. doxygenclass:: ns3::LDM
+   :members:
+
   
 Networking and Transport layers
 -------------------------------
