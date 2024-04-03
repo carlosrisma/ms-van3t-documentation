@@ -62,7 +62,7 @@ Basic Transport Protocol (BTP)
 GeoNetworking (GeoNet) 
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. doxygenclass:: ns3::geonet
+.. doxygenclass:: ns3::GeoNet
    :members:
 
 Measurements 
