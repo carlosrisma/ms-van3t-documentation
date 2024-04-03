@@ -37,6 +37,15 @@ namespace ns3 {
     DENM_TX_SOCKET_NOT_SET=12
   } DENBasicService_error_t;
 
+  /**
+   * \ingroup automotive
+   * \brief This class implements the Dencentralized Environmental Notification Basic Service.
+   *
+   * This class implements the Dencentralized Environmental Notification Basic Service as defined in ETSI EN 302 637-3 V1.3.1 (2019-04).
+   * Decentralized Environmental Notification Message (DENM) is a facilities layer message that is mainly used by ITS applications
+   * in order to alert road users of a detected event using ITS communication technologies. DENM is used to describe a variety of
+   * events that can be detected by ITS stations (ITS-S).
+   */
   class DENBasicService: public Object, public SignalInfoUtils
   {
     public:

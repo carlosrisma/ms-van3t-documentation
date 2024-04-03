@@ -36,6 +36,11 @@ extern "C" {
 
 namespace ns3
 {
+/**
+ * \ingroup automotive
+ * \brief This class implements the GeoNetworking protocol as defined in ETSI EN 302 636-4-1
+ *
+ */
   class GeoNet : public Object
   {
     public:
@@ -69,20 +74,73 @@ namespace ns3
 
 
       static TypeId GetTypeId ();
+      /**
+       * @brief Construct a new GeoNet object.
+       *
+       * Default constructor for the GeoNet class.
+       */
       GeoNet();
       virtual ~GeoNet();
+      /**
+       * @brief Set the Station properties.
+       * @param fixed_stationid
+       * @param fixed_stationtype
+       */
       void setStationProperties(unsigned long fixed_stationid,long fixed_stationtype);
+      /**
+       * @brief Set the fixed position of the RSU.
+       * @param latitude_deg
+       * @param longitude_deg
+       */
       void setFixedPositionRSU(double latitude_deg, double longitude_deg);
+      /**
+       * @brief Set the station ID of the ITS-S.
+       * @param fixed_stationid
+       */
       void setStationID(unsigned long fixed_stationid);
+      /**
+       * @brief Set the station type of the ITS-S.
+       * @param fixed_stationtype
+       */
       void setStationType(long fixed_stationtype);
+      /**
+       * @brief Set the VDP object.
+       * @param vdp
+       */
       void setVDP(VDP* vdp);
       void setVRUdp(VRUdp* vrudp);
+      /**
+       * @brief Set the socket to transmit packets.
+       * @param socket_tx
+       */
       void setSocketTx(Ptr<Socket> socket_tx);
+      /**
+       * @brief Set the callback function to receive packets.
+       * @param rx_callback
+       */
       void addRxCallback(std::function<void(GNDataIndication_t,Address)> rx_callback) {m_ReceiveCallback=rx_callback;}
+      /**
+       * @brief Create GeoNet PDU with the correct headers (GBC or TSB) and send it.
+       * @param dataRequest
+       * @return
+       */
       GNDataConfirm_t sendGN(GNDataRequest_t dataRequest);
+      /**
+       * @brief Receive a GeoNet PDU and send a data indication to BTP layer.
+       * @param socket
+       */
       void receiveGN(Ptr<Socket> socket);
+      /**
+       * @brief Set the PRR supervisor object.
+       * @param PRRSupervisor_ptr
+       */
       void setPRRSupervisor(Ptr<PRRSupervisor> PRRSupervisor_ptr) {m_PRRSupervisor_ptr=PRRSupervisor_ptr;}
       void cleanup();
+      /**
+       * @brief Disable the PRR supervisor for beacons.
+       *
+       * This method disables the PRR supervisor for beacons, ignoring them for PRR computations.
+       */
       void disablePRRsupervisorForBeacons() {m_PRRsupervisor_beacons=false;}
       void enablePRRsupervisorForBeacons() {m_PRRsupervisor_beacons=true;}
 
@@ -111,11 +169,11 @@ namespace ns3
       int get_messageID_from_BTP_port(int16_t port);
 
 
-      std::map<GNAddress,GNLocTE> m_GNLocT;//! ETSI EN 302 636-4-1 [8.1]
-      std::map<GNAddress,Timer> m_GNLocTTimer; //! Timer for every new entry in th Location Table
+      std::map<GNAddress,GNLocTE> m_GNLocT;///! ETSI EN 302 636-4-1 [8.1]
+      std::map<GNAddress,Timer> m_GNLocTTimer; ///! Timer for every new entry in th Location Table
       template<typename MEM_PTR> void setTLocT(Timer &timer,Time delay,MEM_PTR callback_fcn,GNAddress address);
 
-      std::map<GNDataRequest_t,std::pair<Timer,Timer>> m_Repetition_packets;//! Timers for packets with repetition interval enabled
+      std::map<GNDataRequest_t,std::pair<Timer,Timer>> m_Repetition_packets;///! Timers for packets with repetition interval enabled
       template<typename MEM_PTR> void setRepInt(Timer &timer,Time delay,MEM_PTR callback_fcn,GNDataRequest_t dataRequest);
 
       std::mutex m_LocT_Mutex;
@@ -142,16 +200,16 @@ namespace ns3
 
       //ETSI 302 636-4-1 ANNEX H: GeoNetworking protocol constans
       Mac48Address m_GnLocalGnAddr;
-      uint8_t m_GnLocalAddrCongMethod = 1; //! MANAGED
+      uint8_t m_GnLocalAddrCongMethod = 1; ///! MANAGED
       uint8_t m_GnPtotocolVersion = 1;
-      bool m_GnIsMobile=true; //!To set wether if Mobile(1) or Stationary(0)
+      bool m_GnIsMobile=true; ///!To set wether if Mobile(1) or Stationary(0)
       uint8_t m_GnIfType = 1;
       double m_GnMinUpdateFrequencyEPV = 1000;
       uint32_t m_GnPaiInterval = 80;
       uint32_t m_GnMaxSduSize = 1398;
       uint8_t m_GnMaxGeoNetworkingHeaderSize = 88;
-      uint8_t m_GnLifeTimeLocTE = 20; //! seconds
-      uint8_t m_GnSecurity = 0; //!Disabled
+      uint8_t m_GnLifeTimeLocTE = 20; ///! seconds
+      uint8_t m_GnSecurity = 0; ///!Disabled
       uint8_t m_GnSnDecapResultHandling = 0; //!STRICT
       uint8_t m_GnLocationServiceMaxRetrans = 10;
       uint16_t m_GnLocationServiceRetransmitTimer = 1000;
@@ -161,12 +219,12 @@ namespace ns3
       uint8_t m_GnDefaultHopLimit = 10;
       uint8_t m_GnDPLLength = 8;
       uint16_t m_GNMaxPacketLifetime = 600;
-      uint8_t m_GnDefaultPacketLifetime = 60 ; // seconds (0xf2)
+      uint8_t m_GnDefaultPacketLifetime = 60 ; ///! seconds (0xf2)
       uint16_t m_GNMaxPacketDataRate = 100;
       uint16_t m_GNMaxPacketDataRateEmaBeta = 90;
       uint16_t m_GNMaxGeoAreaSize = 10;
       uint16_t m_GNMinPacketRepetitionInterval = 100;
-      uint16_t m_GNNonAreaForwardingAlgorithm = 1; //GREEDY
+      uint16_t m_GNNonAreaForwardingAlgorithm = 1; //! GREEDY
       uint16_t m_GNAreaForwardingAlgorithm = 1;
       uint16_t m_GNCbfMinTime = 1;
       uint16_t m_GNCbfMaxTime = 100;

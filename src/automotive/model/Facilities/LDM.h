@@ -211,7 +211,6 @@ public:
     /**
      * @brief This function updates all the Perceived Object polygon's showing the current perception of them
      *
-     * This function updates all the Perceived Object polygon's showing the current perception of them
      * The function is called every 100 ms
      */
     void updatePolygons();
