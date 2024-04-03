@@ -145,46 +145,45 @@ private:
   bool checkCPMconditions(std::vector<LDM::returnedVehicleData_t>::iterator it);
   double cartesian_dist(double lon1, double lat1, double lon2, double lat2);
 
-  std::function<void(asn1cpp::Seq<CollectivePerceptionMessage>, Address)> m_CPReceiveCallback;
+  std::function<void(asn1cpp::Seq<CollectivePerceptionMessage>, Address)> m_CPReceiveCallback;  //! Callback function for received CPMs
   std::function<void(asn1cpp::Seq<CollectivePerceptionMessage>, Address, Ptr<Packet>)> m_CPReceiveCallbackPkt;
   std::function<void(asn1cpp::Seq<CollectivePerceptionMessage>, Address, StationID_t, StationType_t, SignalInfo)> m_CPReceiveCallbackExtended;
 
+  Ptr<btp> m_btp; //! BTP object
 
-  Ptr<btp> m_btp;
-
-  long m_T_CheckCpmGen_ms;
-  long m_T_LastSensorInfoContainer;
+  long m_T_CheckCpmGen_ms; //! Time interval for checking the conditions for CPM generation
+  long m_T_LastSensorInfoContainer; //! Time interval for adding sensor information to the CPM
 
   long m_T_GenCpm_ms;
   int16_t m_N_GenCpm;
   int16_t m_N_GenCpmMax;
 
-  int64_t lastCpmGen;
+  int64_t lastCpmGen; //! Timestamp of the last CPM generation
   int64_t lastCpmGenLowFrequency;
   int64_t lastCpmGenSpecialVehicle;
 
-  bool m_real_time;
+  bool m_real_time; //! Flag to specify if using real time or simulation time for the CPM timestamps
   bool m_vehicle;
-  bool m_redundancy_mitigation;
-  VDP* m_vdp;
+  bool m_redundancy_mitigation; //! Flag to specify if using redundancy mitigation defined for the CPM generation
+  VDP* m_vdp; //! VDP object
   Ptr<TraciClient> m_client;
 
   Ptr<Socket> m_socket_tx; // Socket TX
 
-  Ptr<LDM> m_LDM;
+  Ptr<LDM> m_LDM; //! LDM object
 
-  StationID_t m_station_id;
-  StationType_t m_stationtype;
+  StationID_t m_station_id; //! Station ID of the ITS-S
+  StationType_t m_stationtype; //! Station type of the ITS-S
 
   // Previous Cpm relevant values
   double m_prev_heading;
   double m_prev_distance;
   double m_prev_speed;
-  std::vector<long> m_lastCPM_POs;
+  std::vector<long> m_lastCPM_POs; // Last Perceived Objects included in the previous CPM
 
-  //!Statistic: number of CPMs successfully sent since the CP Basic Service has been started
+
   // The CP Basic Service can count up to 18446744073709551615 (UINT64_MAX) Cpms
-  uint64_t m_cpm_sent;
+  uint64_t m_cpm_sent; //! Statistic: number of CPMs successfully sent since the CP Basic Service has been started
 
   // ns-3 event IDs used to properly stop the simulation with terminateDissemination()
   EventId m_event_cpmDisseminationStart;

@@ -164,29 +164,29 @@ public:
 private:
   void computePRR(std::string buf);
 
-  std::unordered_map<std::string,baselineVehicleData_t> m_packetbuff_map;
-  std::unordered_map<std::string,int64_t> m_latency_map;
-  std::unordered_map<std::string,uint64_t> m_vehicleid_map;
-  std::unordered_map<std::string,messageType_e> m_messagetype_map;
-  std::unordered_map<std::string,StationType_t> m_stationtype_map;
+  std::unordered_map<std::string,baselineVehicleData_t> m_packetbuff_map; //! key: packet, value: list of vehicle IDs
+  std::unordered_map<std::string,int64_t> m_latency_map; //! key: packet, value: latency
+  std::unordered_map<std::string,uint64_t> m_vehicleid_map; //! key: packet, value: vehicle ID
+  std::unordered_map<std::string,messageType_e> m_messagetype_map; //! key: packet, value: message type
+  std::unordered_map<std::string,StationType_t> m_stationtype_map; //! key: packet, value: station type
 
   int m_count = 0;
   uint64_t m_count_latency = 0;
   double m_avg_PRR = 0.0;
   double m_avg_latency_ms = 0.0;
-  std::unordered_map<uint64_t,double> m_avg_PRR_per_veh;
-  std::unordered_map<uint64_t,double> m_avg_PRR_per_ped;
-  std::unordered_map<uint64_t,double> m_avg_latency_ms_per_veh;
-  std::unordered_map<uint64_t,double> m_avg_latency_ms_per_ped;
-  std::unordered_map<uint64_t,int> m_count_per_veh;
-  std::unordered_map<uint64_t,int> m_count_per_ped;
-  std::unordered_map<uint64_t,uint64_t> m_count_latency_per_veh;
-  std::unordered_map<uint64_t,uint64_t> m_count_latency_per_ped;
+  std::unordered_map<uint64_t,double> m_avg_PRR_per_veh; //! key: vehicle ID, value: PRR
+  std::unordered_map<uint64_t,double> m_avg_PRR_per_ped; //! key: pedestrian ID, value: PRR
+  std::unordered_map<uint64_t,double> m_avg_latency_ms_per_veh;  //! key: vehicle ID, value: latency
+  std::unordered_map<uint64_t,double> m_avg_latency_ms_per_ped;  //! key: pedestrian ID, value: latency
+  std::unordered_map<uint64_t,int> m_count_per_veh; //! key: vehicle ID, value: count
+  std::unordered_map<uint64_t,int> m_count_per_ped;  //! key: pedestrian ID, value: count
+  std::unordered_map<uint64_t,uint64_t> m_count_latency_per_veh;    //! key: vehicle ID, value: latency
+  std::unordered_map<uint64_t,uint64_t> m_count_latency_per_ped;    //! key: pedestrian ID, value: latency
 
-  std::unordered_map<messageType_e,double> m_avg_PRR_per_messagetype;
-  std::unordered_map<messageType_e,double> m_avg_latency_ms_per_messagetype;
-  std::unordered_map<messageType_e,int> m_count_per_messagetype;
-  std::unordered_map<messageType_e,uint64_t> m_count_latency_per_messagetype;
+  std::unordered_map<messageType_e,double> m_avg_PRR_per_messagetype; //! key: message type, value: PRR
+  std::unordered_map<messageType_e,double> m_avg_latency_ms_per_messagetype; //! key: message type, value: latency
+  std::unordered_map<messageType_e,int> m_count_per_messagetype; //! key: message type, value: count
+  std::unordered_map<messageType_e,uint64_t> m_count_latency_per_messagetype; //! key: message type, value: latency
 
   Ptr<TraciClient> m_traci_ptr = nullptr;
   double m_baseline_m = 150.0;

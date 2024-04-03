@@ -227,35 +227,35 @@ namespace ns3 {
 
 
     uint16_t m_port;
-    //!< Flag to indicate if the timestamps are based on the real time
-    bool m_real_time;
+
+    bool m_real_time; //! Flag to indicate if the timestamps are based on the real time
     std::string m_model;
 
-    //!< Station ID of the ITS-S
-    unsigned long m_station_id;
-    //!< Station type of the ITS-S
-    long m_stationtype;
-    //!< Sequence number of the DENM messages
-    uint16_t m_seq_number;
 
-    //!< BTP object used to send the DENM messages
-    Ptr<btp> m_btp;
+    unsigned long m_station_id; //! Station ID of the ITS-S
 
-    //!< GeoArea for which the DENM messages are intended
-    GeoArea_t m_geoArea;
+    long m_stationtype; //! Station type of the ITS-S
 
-    //!< Socket used to send the DENM messages
-    Ptr<Socket> m_socket_tx; // Socket TX
+    uint16_t m_seq_number; //! Sequence number of the DENM messages
 
-    //!< Originating ITS-S table
-    std::map<std::pair<unsigned long,long>,ITSSOriginatingTableEntry> m_originatingITSSTable;
-    //!< Receiving ITS-S table
-    std::map<std::pair<unsigned long,long>,ITSSReceivingTableEntry> m_receivingITSSTable;
 
-    //!< Originating timer table
-    std::map<std::pair<unsigned long,long>,std::tuple<Timer,Timer,Timer>> m_originatingTimerTable;
-    //!< Validity timer table
-    std::map<std::pair<unsigned long,long>,Timer> m_T_R_Validity_Table;
+    Ptr<btp> m_btp; //! BTP object used to send the DENM messages
+
+
+    GeoArea_t m_geoArea; //! GeoArea for which the DENM messages are intended
+
+
+    Ptr<Socket> m_socket_tx; //! Socket used to send the DENM messages
+
+
+    std::map<std::pair<unsigned long,long>,ITSSOriginatingTableEntry> m_originatingITSSTable; //! Originating ITS-S table
+
+    std::map<std::pair<unsigned long,long>,ITSSReceivingTableEntry> m_receivingITSSTable; //! Receiving ITS-S table
+
+
+    std::map<std::pair<unsigned long,long>,std::tuple<Timer,Timer,Timer>> m_originatingTimerTable; //! Originating timer table
+
+    std::map<std::pair<unsigned long,long>,Timer> m_T_R_Validity_Table; //! Validity timer table
 
     /* den_data private fillers (ASN.1 types), used within "receiveDENM" */
     /**

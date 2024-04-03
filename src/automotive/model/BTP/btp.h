@@ -122,13 +122,13 @@ namespace ns3
 
   private:
 
-    Ptr<GeoNet> m_geonet; ///< Pointer to the GeoNet object.
+    Ptr<GeoNet> m_geonet; //! Pointer to the GeoNet object.
 
-    std::function<void(BTPDataIndication_t,Address)> m_cam_ReceiveCallback; ///< Callback for CAM message reception.
-    std::function<void(BTPDataIndication_t,Address)> m_denm_ReceiveCallback; ///< Callback for DENM message reception.
-    std::function<void(BTPDataIndication_t,Address)> m_ivim_ReceiveCallback; ///< Callback for IVIM message reception.
-    std::function<void(BTPDataIndication_t,Address)> m_cpm_ReceiveCallback;   ///< Callback for CPM message reception.
-    std::function<void(BTPDataIndication_t,Address)> m_vam_ReceiveCallback;  ///< Callback for VAM message reception.
+    std::function<void(BTPDataIndication_t,Address)> m_cam_ReceiveCallback; //! Callback for CAM message reception.
+    std::function<void(BTPDataIndication_t,Address)> m_denm_ReceiveCallback; //! Callback for DENM message reception.
+    std::function<void(BTPDataIndication_t,Address)> m_ivim_ReceiveCallback; //! Callback for IVIM message reception.
+    std::function<void(BTPDataIndication_t,Address)> m_cpm_ReceiveCallback;   //! Callback for CPM message reception.
+    std::function<void(BTPDataIndication_t,Address)> m_vam_ReceiveCallback;  //! Callback for VAM message reception.
 
   };
 }

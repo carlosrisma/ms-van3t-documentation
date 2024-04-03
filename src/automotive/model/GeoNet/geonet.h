@@ -178,22 +178,22 @@ namespace ns3
 
       std::mutex m_LocT_Mutex;
 
-      GNegoPV m_egoPV; //! ETSI EN 302 636-4-1 [8.2]
+      GNegoPV m_egoPV; //! Ego Position Vector ETSI EN 302 636-4-1 [8.2]
       void EPVupdate();
 
-      uint16_t m_seqNumber; //! ETSI EN 302 636-4-1 [8.3]
+      uint16_t m_seqNumber; //! Sequence Number ETSI EN 302 636-4-1 [8.3]
 
-      GNAddress m_GNAddress;
+      GNAddress m_GNAddress; //! GeoNetworking Address ETSI EN 302 636-4-1
 
       Ptr<Socket> m_socket_tx;
 
       std::function<void(GNDataIndication_t,Address)> m_ReceiveCallback;
 
 
-      VDP* m_vdp;
-      VRUdp* m_vrudp;
-      StationID_t m_station_id;
-      StationType_t m_stationtype;
+      VDP* m_vdp; //! Pointer to the VDP object
+      VRUdp* m_vrudp; //! Pointer to the VRUdp object
+      StationID_t m_station_id; //! Station ID
+      StationType_t m_stationtype; //! Station Type
 
       EventId m_event_EPVupdate;
       EventId m_event_Beacon;
