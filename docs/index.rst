@@ -16,6 +16,7 @@ Supported ETSI C-ITS messages
 - DENM
 - IVIM
 - CPM
+- VAM
 
 Supported access technologies
 -------------------------------
@@ -27,7 +28,7 @@ Supported access technologies
 - `3GPP Release 14 LTE-V2X <https://github.com/FabianEckermann/ns-3_c-v2x>`_
 - 3GPP Release 16 5G NR-V2X
 
-.. image:: architecture.png
+.. image:: architecture_new.png
 
 Contents
 --------
