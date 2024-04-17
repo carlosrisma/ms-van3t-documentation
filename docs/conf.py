@@ -72,7 +72,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'ms-van3t documentation'
+project = 'ms-van3t-documentation'
 copyright = '2024, Carlos Mateo Risma Carletti'
 
 version = '1.0'
